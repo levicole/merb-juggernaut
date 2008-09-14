@@ -1,0 +1,19 @@
+<script type="text/javascript" charset="utf-8">
+	$(document).ready(function() {
+		$("#new_message").submit(function() {
+			var formData = $(this).serialize();
+			var formAction = $(this).attr("action");
+			$.post(formAction, formData);
+			return false;
+		});
+	})
+</script>
+<form id="new_message" action="/chat/chat_message" method="post" accept-charset="utf-8">
+	<p><input type="text" name="message"></p>
+
+	<p><input type="submit" value="Continue &rarr;"></p>
+</form>
+
+<ul id="messages">
+
+</ul>
